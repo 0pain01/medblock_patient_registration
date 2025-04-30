@@ -5,7 +5,7 @@ This project is a **React**-based application that allows users to register pati
 ## Features
 
 - **Register New Patients**: Register patient information, including Name, Email, Phone Number, Age, and Gender.
-- **Query Patient Records Using SQL**: Query the patient data using SQL commands (like `SELECT`).
+- **Query Patient Records Using SQL**: Query the patient data using SQL commands (like `SELECT, DELETE,...`) except (`DROP, ALTER`).
 - **Persist Patient Data Across Page Refreshes**: Patient data is stored in the browser using IndexedDB, so it is persistent even after page refresh.
 - **Multi-Tab Support**: The system supports usage in multiple tabs simultaneously, syncing data in real-time across all open tabs.
 
@@ -25,46 +25,6 @@ cd medblock_patient_registration
 ```bash
 npm install
 ```
-### 3. Add 4 files if missing:
-- index.css (location: /src)
-  ```bash
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  :root{
-    font-family: "Inter",sans-serif;
-  }
-  ```
-- main.jsx (location: /src)
-  ```bash
-  import { StrictMode } from 'react'
-  import { createRoot } from 'react-dom/client'
-  import './index.css'
-  import App from './App.jsx'
-  
-  createRoot(document.getElementById('root')).render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  )
-  ```
-- index.html (location: root ) // simply inside main folder
-  ```bash
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Patient registration PGLITE</title>
-    </head>
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.jsx"></script>
-    </body>
-  </html>
-  ```
 
 ### 3. Start Development Server
 ```bash
@@ -121,7 +81,7 @@ This polling approach ensures that each open tab periodically retrieves and disp
 
 - **Real-Time Multi-Tab Sync**: Initially, syncing data across tabs was considered using `BroadcastChannel` or `PGlite's live query` feature. However, due to implementation constraints, a simpler polling approach using `useEffect` with a `setInterval` (every 2 seconds) was used to refresh data periodically in all tabs. While not instant, it provides reasonable consistency between multiple tabs.
   
-- **Database Query Handling in the Browser**: Working with SQL queries in the browser using PGlite required careful input validation and error handling. Restricting destructive commands (like `DROP`, `ALTER`) was necessary to prevent data issues.
+- **Database Query Handling in the Browser**: Working with SQL queries in the browser using PGlite required careful input validation and error handling. *Restricting destructive commands (like `DROP`, `ALTER`) was necessary to prevent data issues*.
 
 - **Data Persistence**: Ensuring patient data remains after page reloads involved configuring `PGlite` with `idb://` to store data persistently in IndexedDB. It took time to understand how to integrate it properly with a React app and service worker setup.
 
