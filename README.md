@@ -15,7 +15,7 @@ The system utilizes **PGlite** (a lightweight SQLite client for the browser) to 
    - **Node.js version: ≥ 20.18.1**
    - **npm version: ≥ 10.8.2**
 
-Follow these steps and run the below commands to set up the project locally using command promt(cmd) inside any folder you want the project to be downloaded in :
+Follow these steps and run the below commands to set up the project locally using **command prompt(cmd)** inside any folder you want the project to be downloaded in :
 
 ### 1. Clone the repository
 ```bash
