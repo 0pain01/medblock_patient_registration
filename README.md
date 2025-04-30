@@ -9,13 +9,6 @@ This project is a **React**-based application that allows users to register pati
 - **Persist Patient Data Across Page Refreshes**: Patient data is stored in the browser using IndexedDB, so it is persistent even after page refresh.
 - **Multi-Tab Support**: The system supports usage in multiple tabs simultaneously, syncing data in real-time across all open tabs.
 
-## Tech Stack
-
-- **Frontend**: React, Vite, TailwindCSS
-- **Database**: PGlite (IndexedDB)
-- **State Management**: React Hooks
-- **Deployment**: The app can be deployed on any static site hosting platform such as GitHub Pages, Netlify, or Vercel.
-
 ## Setup and Usage
 
 Follow these steps to set up the project locally:
@@ -53,9 +46,7 @@ Once the server starts, your application will be available at http://localhost:3
 #### Implementation:
 
 The registration form uses React hooks to manage input values for Name, Email, Age, Phone, and Gender.
-
 Validation is implemented for email and phone number before submitting the form data.
-
 Patient details are stored using PGlite, which uses IndexedDB to persist the data.
 
 ### 2. Query Patient Records Using SQL
@@ -64,9 +55,7 @@ Users can query the patient records stored in the database using SQL commands su
 #### Implementation:
 
 A simple SQL query interface allows users to input custom SQL commands.
-
 PGlite's query method is used to execute SQL commands on the database.
-
 The query results are displayed in a table, showing patient records that match the query.
 
 ### 3. Persist Patient Data Across Page Refreshes
@@ -75,17 +64,14 @@ The patient data is persisted in IndexedDB, which ensures that the data remains 
 #### Implementation:
 
 PGlite uses IndexedDB as a storage solution to save and load patient data.
-
 Whenever the app is loaded, PGlite fetches the stored data from IndexedDB, making it available even after page refresh.
 
 ### 4. Multi-Tab Support
 The application supports simultaneous usage in multiple tabs, ensuring real-time synchronization across all open tabs. If a new patient is added in one tab, the other open tabs are automatically updated.
 
 #### Implementation:
-
-PGlite's live-query feature and BroadcastChannel API are used to sync data across multiple tabs in real-time.
-
-When a change is made in one tab, a message is broadcasted to all other open tabs, ensuring that all tabs reflect the latest changes.
+The synchronization is achieved using React’s useEffect hook combined with setInterval, which refreshes the live table component every 2 seconds by fetching the latest data from the database.
+This polling approach ensures that each open tab periodically retrieves and displays the most recent updates, maintaining consistent data visibility across tabs.
 
 ## Challenges Faced
 
@@ -94,4 +80,7 @@ When a change is made in one tab, a message is broadcasted to all other open tab
 - **Database Query Handling in the Browser**: Working with SQL queries in the browser using PGlite required careful input validation and error handling. Restricting destructive commands (like `DROP`, `ALTER`) was necessary to prevent data issues.
 
 - **Data Persistence**: Ensuring patient data remains after page reloads involved configuring `PGlite` with `idb://` to store data persistently in IndexedDB. It took time to understand how to integrate it properly with a React app and service worker setup.
+
+![image](https://github.com/user-attachments/assets/204bcf26-ef34-4ae5-96c0-f8032a8f61ba)
+
 
