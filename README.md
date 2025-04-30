@@ -34,17 +34,17 @@ Once the server starts, your application will be available at http://localhost:5
 
 ## Features and Functionality
 ### 1. Register New Patients
--- Users can register patients with the following details:
+--> Users can register patients with the following details:
 
---- Name: The patient's full name.
+  - Name: The patient's full name.
 
---- Email: A unique email address for the patient (validated).
+  - Email: A unique email address for the patient (validated).
 
---- Phone: A 10-digit phone number starting with 9876 (validated).
+  - Phone: A 10-digit phone number starting with 9876 (validated).
 
---- Age: The patient's age.
+  - Age: The patient's age.
 
---- Gender: Gender of the patient (Male, Female, Other).
+  - Gender: Gender of the patient (Male, Female, Other).
 
 #### Implementation:
 
