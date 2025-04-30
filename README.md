@@ -18,8 +18,8 @@ Follow these steps to set up the project locally:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/patient-registration.git
-cd patient-registration
+https://github.com/0pain01/medblock_patient_registration.git
+cd medblock_patient_registration
 ```
 ### 2. Install Dependencies
 ```bash
