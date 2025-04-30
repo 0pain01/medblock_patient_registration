@@ -14,7 +14,7 @@ This project is a **React**-based application that allows users to register pati
    - Node.js version: ≥ 20.18.1
    - npm version: ≥ 10.8.2
 
-Follow these steps to set up the project locally:
+Follow these steps and run the below commands to set up the project locally using command promt(cmd) inside any folder you want the project to be downloaded in :
 
 ### 1. Clone the repository
 ```bash
