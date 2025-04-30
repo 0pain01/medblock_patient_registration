@@ -25,6 +25,47 @@ cd medblock_patient_registration
 ```bash
 npm install
 ```
+### 3. Add 4 files if missing:
+- index.css (location: /src)
+  ```bash
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  :root{
+    font-family: "Inter",sans-serif;
+  }
+  ```
+- main.jsx (location: /src)
+  ```bash
+  import { StrictMode } from 'react'
+  import { createRoot } from 'react-dom/client'
+  import './index.css'
+  import App from './App.jsx'
+  
+  createRoot(document.getElementById('root')).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  )
+  ```
+- index.html (location: root ) // simply inside main folder
+  ```bash
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Patient registration PGLITE</title>
+    </head>
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.jsx"></script>
+    </body>
+  </html>
+  ```
+
 ### 3. Start Development Server
 ```bash
 npm run dev
