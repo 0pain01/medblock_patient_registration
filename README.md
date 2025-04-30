@@ -10,6 +10,9 @@ This project is a **React**-based application that allows users to register pati
 - **Multi-Tab Support**: The system supports usage in multiple tabs simultaneously, syncing data in real-time across all open tabs.
 
 ## Setup and Usage
+ -> Environment Requirements:
+   - Node.js version: ≥ 20.18.1
+   - npm version: ≥ 10.8.2
 
 Follow these steps to set up the project locally:
 
