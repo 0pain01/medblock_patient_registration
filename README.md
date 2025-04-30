@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Once the server starts, your application will be available at http://localhost:3000 in the browser.
+Once the server starts, your application will be available at http://localhost:5173 in the browser.
 
 ## Features and Functionality
 ### 1. Register New Patients
